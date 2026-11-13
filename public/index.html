@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>주문</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <img src="./assets/Asterum433-10_Logo.png" alt="로고" class="logo" />
+      </div>
+      <nav>
+        <a href="index.html" class="active">주문</a>
+        <a href="orders.html">주문현황</a>
+      </nav>
+    </header>
+
+    <main id="main-page">
+      <section id="menu-area">
+        <div id="tabs"></div>
+        <span>+ 메뉴 추가..?</span>
+        <div id="menu-grid"></div>
+      </section>
+
+      <section id="cart-area">
+        <button class="allclear-btn" onclick="allClear()">전체삭제</button>
+        <div id="cart-list"></div>
+        <div id="cart-lower">
+          <div id="cart-count">0개</div>
+          <div id="cart-total">0원</div>
+        </div>
+        <button id="pay-btn">결제하기</button>
+      </section>
+    </main>
+
+    <div>
+      <div id="pay" class="modal">
+        <div class="modal-content">
+          <div class="pay-left">
+            <div class="pay-header">
+              <button onclick="closePay()">〈</button>
+              <span>결제 방법</span>
+            </div>
+
+            <div class="pay-method">
+              <div class="pay-options">
+                <button onclick="selectMethod(this)">현금</button>
+                <button onclick="selectMethod(this)">카드</button>
+                <button onclick="selectMethod(this)">페이</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="pay-right">
+            <div id="pay-items"></div>
+            <p>
+              <span>총 <span id="pay-count">0개</span></span>
+              <span id="pay-total"></span>
+            </p>
+            <div id="cash-box" style="display: none">
+              <label>받은 금액</label>
+              <input
+                type="number"
+                id="pay-received"
+                placeholder="받은 금액 입력"
+              />
+            </div>
+            <p>거스름돈 <span id="pay-change">0원</span></p>
+            <button
+              class="pay-confirm"
+              id="pay-confirm"
+              onclick="payment()"
+              disabled
+            >
+              결제하기
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="done" class="modal">
+      <div class="done-box">
+        <h2>결제 완료</h2>
+        <p>결제수단 <span id="done-method"></span></p>
+        <p>결제금액 <span id="done-total"></span></p>
+        <p>거스름돈 <span id="done-change"></span></p>
+        <button onclick="closeDone()">확인</button>
+      </div>
+    </div>
+
+    <script src="./js/index.js"></script>
+    <script src="./js/modal.js"></script>
+  </body>
+</html>

@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>주문현황</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <img src="./assets/Asterum433-10_Logo.png" alt="로고" class="logo" />
+      </div>
+      <nav>
+        <a href="index.html">주문</a>
+        <a href="orders.html" class="active">주문현황</a>
+      </nav>
+    </header>
+
+    <div id="order-page">
+      <table>
+        <thead>
+          <tr>
+            <th>주문번호</th>
+            <th>주문 내용</th>
+            <th>금액</th>
+            <th>주문 시각</th>
+            <th>상태</th>
+          </tr>
+        </thead>
+        <tbody id="order-list"></tbody>
+      </table>
+    </div>
+
+    <script src="./js/orders.js"></script>
+  </body>
+</html>
